@@ -72,3 +72,6 @@ dummy:
   image: me/myapp
   entrypoint: ["noop", "param0"]
   command: ["param2", "param1"]
+nested:
+  image: me/myapp
+  command: ["sh", "-c", "make test ; make run"]
