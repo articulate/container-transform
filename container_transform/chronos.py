@@ -298,7 +298,9 @@ class ChronosTransformer(BaseTransformer):
         return ' '.join(command)
 
     def emit_command(self, command):
-        return command.split()
+        if isinstance(command, str):
+            command = command.split()
+        return command
 
     def ingest_entrypoint(self, entrypoint):
         return entrypoint

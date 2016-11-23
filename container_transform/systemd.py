@@ -145,6 +145,8 @@ class SystemdTransformer(BaseTransformer):
         pass
 
     def emit_command(self, command):
+        if isinstance(command, list):
+            command = ' '.join(command)
         return command
 
     def ingest_entrypoint(self, entrypoint):
