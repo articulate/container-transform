@@ -198,8 +198,8 @@ class ECSTransformer(BaseTransformer):
         return ' '.join(entrypoint)
 
     def emit_entrypoint(self, entrypoint):
-        if isinstance(command, str):
-            command = command.split()
+        if isinstance(entrypoint, str):
+            entrypoint = entrypoint.split()
         return entrypoint
 
     def ingest_volumes_from(self, volumes_from):
