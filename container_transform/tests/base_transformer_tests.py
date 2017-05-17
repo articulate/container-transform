@@ -23,10 +23,10 @@ class BaseTransformerTests(TestCase):
 
         self.assertEqual(
             available_params.difference(emit_methods),
-            {'build', 'essential', 'volumes_from', 'logging'}
+            {'build', 'essential', 'volumes_from', 'logging', 'memory_reservation'}
         )
 
         self.assertEqual(
             available_params.difference(ingest_methods),
-            {'build', 'essential', 'volumes_from', 'logging'}
+            {'build', 'essential', 'volumes_from', 'logging', 'memory_reservation'}
         )

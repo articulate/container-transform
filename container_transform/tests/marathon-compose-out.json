@@ -180,7 +180,9 @@
                     },
                     {
                         "key": "entrypoint",
-                        "value": "/bin/bash"
+                        "value": [
+                            "/bin/bash"
+                        ]
                     },
                     {
                         "key": "expose",

@@ -14,6 +14,8 @@
                     "tag": "web"
                 }
             },
+            "memory": 128,
+            "memoryReservation": 64,
             "mountPoints": [
                 {
                     "containerPath": "/code",

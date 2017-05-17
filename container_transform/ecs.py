@@ -162,6 +162,12 @@ class ECSTransformer(BaseTransformer):
             return 4
         return mem_in_mb
 
+    def ingest_memory_reservation(self, memory):
+        return self.ingest_memory(memory)
+
+    def emit_memory_reservation(self, memory):
+        return self.emit_memory(memory)
+
     def ingest_cpu(self, cpu):
         return cpu
 

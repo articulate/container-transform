@@ -194,6 +194,12 @@ class ComposeTransformer(BaseTransformer):
     def emit_memory(self, memory):
         return '{}b'.format(memory)
 
+    def ingest_memory_reservation(self, memory):
+        return self.ingest_memory(memory)
+
+    def emit_memory_reservation(self, memory):
+        return self.emit_memory(memory)
+
     def ingest_cpu(self, cpu):
         return cpu
 

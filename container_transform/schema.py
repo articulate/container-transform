@@ -113,7 +113,7 @@ ARG_MAP = OrderedDict({
     'memory': {
         TransformationTypes.ECS.value: {
             'name': 'memory',
-            'required': True
+            'required': False
         },
         TransformationTypes.COMPOSE.value: {
             'name': 'mem_limit',
@@ -133,6 +133,32 @@ ARG_MAP = OrderedDict({
         },
         TransformationTypes.KUBERNETES.value: {
             'name': 'resources.limits.memory',
+            'required': False,
+        },
+    },
+    'memory_reservation': {
+        TransformationTypes.ECS.value: {
+            'name': 'memoryReservation',
+            'required': False
+        },
+        TransformationTypes.COMPOSE.value: {
+            'name': 'mem_reservation',
+            'required': False,
+        },
+        TransformationTypes.SYSTEMD.value: {
+            'name': None,
+            'required': False,
+        },
+        TransformationTypes.MARATHON.value: {
+            'name': None,
+            'required': False,
+        },
+        TransformationTypes.CHRONOS.value: {
+            'name': None,
+            'required': False,
+        },
+        TransformationTypes.KUBERNETES.value: {
+            'name': None,
             'required': False,
         },
     },
