@@ -301,7 +301,7 @@ ARG_MAP = OrderedDict({
             'required': False
         },
         TransformationTypes.COMPOSE.value: {
-            'name': None,
+            'name': 'essential',
             'required': False
         },
         TransformationTypes.SYSTEMD.value: {

@@ -101,9 +101,10 @@ class ECSTransformer(BaseTransformer):
 
     @staticmethod
     def validate(container):
-        container['essential'] = True
-
         container_name = container.get('name')
+
+        if container.get('essential') == None:
+            container['essential'] = True
 
         if not container_name:
             container_name = str(uuid.uuid4())
