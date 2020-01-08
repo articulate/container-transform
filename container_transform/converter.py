@@ -80,7 +80,7 @@ class Converter(object):
 
             input_name = options.get(self.input_type, {}).get('name')
 
-            if container.get(input_name) and \
+            if container.get(input_name) != None and \
                     hasattr(input_transformer, 'ingest_{}'.format(parameter)) and \
                     output_name and hasattr(output_transformer, 'emit_{}'.format(parameter)):
                 # call transform_{}
@@ -89,7 +89,7 @@ class Converter(object):
 
                 output[output_name] = emit_func(ingest_func(container.get(input_name)))
 
-            if not container.get(input_name) and output_required:
+            if not container.get(input_name) != None and output_required:
                 msg_template = 'Container {name} is missing required parameter "{output_name}".'
                 self.messages.add(
                     msg_template.format(

@@ -5,7 +5,8 @@ methods should produce and accept (respectively)"""
 SCHEMA = {
     'image': str,
     'name': str,
-    'cpu': int,  # out of 1024
+    'cpu': int,
+    'essential': bool,
     'memory': int,  # in bytes
     'links': list,  # This is universal across formats
     'logging': {
@@ -105,6 +106,12 @@ class BaseTransformer(object, metaclass=ABCMeta):
 
     def emit_name(self, name):
         return name
+
+    def ingest_essential(self, essential):
+        return essential
+
+    def emit_essential(self, essential):
+        return essential
 
     def ingest_image(self, image):
         return image
